@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>welcome to scratch</title>
+	 <script>
+     function plus(){
+       var x =parseInt(document.getElementById('text1').value);
+       var y = parseInt(document.getElementById('text2').value);
+       var z = x + y;
+       document.getElementById('text3').value = z;
+         $(document).ready(function(){
+
+      $('#button1').click(function(){
+     var z= $('#text3').val();
+        $.get('/GetValue/'+z, function(data, status){
+          $('#msg').html(data);
+        });});});}
+     
+       
+
+        function minus(){  
+        var x = parseInt(document.getElementById('text1').value);
+       var y = parseInt(document.getElementById('text2').value);
+       var z = x - y; 
+        document.getElementById('text3').value = z;   
+       $(document).ready(function(){
+      $('#button2').click(function(){
+     var z= $('#text3').val();
+        $.get('/GetValue/'+z, function(data, status){
+          $('#msg').html(data);
+        });});});}
+        function multiply(){
+       var x = parseInt(document.getElementById('text1').value);
+       var y = parseInt(document.getElementById('text2').value);
+       var z = x * y;
+       document.getElementById('text3').value = z;
+       $(document).ready(function(){
+      $('#button3').click(function(){
+     var z = $('#text3').val();
+        $.get('/GetValue/'+z, function(data, status){
+          $('#msg').html(data);
+        });});});}
+        function division(){
+       var x = parseInt(document.getElementById('text1').value);
+       var y = parseInt(document.getElementById('text2').value);
+       var z = x / y;
+       document.getElementById('text3').value = z;
+       $(document).ready(function(){
+      $('#button4').click(function(){
+     var z = $('#text3').val();
+        $.get('/GetValue/'+z, function(data, status){
+          $('#msg').html(data);
+        });});});}
+       </script>
+
+
+
+</head>
+<body>
+<h1>welcome to scratch </h1>
+<input type="text" id="text1"/><br/><br/>
+  <input type="text" id="text2"/><br/><br/>
+  <input type="text" id="text3"/><br/><br/>
+<button onclick="plus()" id="button1">Add</button><br/><br/>
+<button onclick="minus()" id="button2">minus</button><br/><br/>
+<button onclick="multiply()" id="button3">multiply</button><br/><br/>
+<button onclick="division()" id="button4">division</button><br/><br/>
+<p id="msg"></p>
+</body>
+</html>
